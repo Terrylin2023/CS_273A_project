@@ -1,0 +1,1174 @@
+{
+    "timestamp": "2024-11-26 15:59:14",
+    "duration": 731.0266859531403,
+    "results": {
+        "data_analysis": {
+            "quality_analysis": {
+                "missing_values": {
+                    "train": {
+                        "age": 0,
+                        "workclass": 1836,
+                        "fnlwgt": 0,
+                        "education": 0,
+                        "education-num": 0,
+                        "marital-status": 0,
+                        "occupation": 1843,
+                        "relationship": 0,
+                        "race": 0,
+                        "sex": 0,
+                        "capital-gain": 0,
+                        "capital-loss": 0,
+                        "hours-per-week": 0,
+                        "native-country": 583,
+                        "income": 0
+                    },
+                    "test": {
+                        "age": 0,
+                        "workclass": 963,
+                        "fnlwgt": 0,
+                        "education": 0,
+                        "education-num": 0,
+                        "marital-status": 0,
+                        "occupation": 966,
+                        "relationship": 0,
+                        "race": 0,
+                        "sex": 0,
+                        "capital-gain": 0,
+                        "capital-loss": 0,
+                        "hours-per-week": 0,
+                        "native-country": 274,
+                        "income": 0
+                    }
+                },
+                "data_types": {
+                    "train": {
+                        "age": "int64",
+                        "workclass": "object",
+                        "fnlwgt": "int64",
+                        "education": "object",
+                        "education-num": "int64",
+                        "marital-status": "object",
+                        "occupation": "object",
+                        "relationship": "object",
+                        "race": "object",
+                        "sex": "object",
+                        "capital-gain": "int64",
+                        "capital-loss": "int64",
+                        "hours-per-week": "int64",
+                        "native-country": "object",
+                        "income": "object"
+                    },
+                    "test": {
+                        "age": "int64",
+                        "workclass": "object",
+                        "fnlwgt": "int64",
+                        "education": "object",
+                        "education-num": "int64",
+                        "marital-status": "object",
+                        "occupation": "object",
+                        "relationship": "object",
+                        "race": "object",
+                        "sex": "object",
+                        "capital-gain": "int64",
+                        "capital-loss": "int64",
+                        "hours-per-week": "int64",
+                        "native-country": "object",
+                        "income": "object"
+                    }
+                },
+                "unique_values": {
+                    "train": {
+                        "age": 73,
+                        "workclass": 9,
+                        "fnlwgt": 21648,
+                        "education": 16,
+                        "education-num": 16,
+                        "marital-status": 7,
+                        "occupation": 15,
+                        "relationship": 6,
+                        "race": 5,
+                        "sex": 2,
+                        "capital-gain": 119,
+                        "capital-loss": 92,
+                        "hours-per-week": 94,
+                        "native-country": 42,
+                        "income": 2
+                    },
+                    "test": {
+                        "age": 73,
+                        "workclass": 9,
+                        "fnlwgt": 12787,
+                        "education": 16,
+                        "education-num": 16,
+                        "marital-status": 7,
+                        "occupation": 15,
+                        "relationship": 6,
+                        "race": 5,
+                        "sex": 2,
+                        "capital-gain": 113,
+                        "capital-loss": 82,
+                        "hours-per-week": 89,
+                        "native-country": 41,
+                        "income": 2
+                    }
+                }
+            },
+            "logs": [
+                "[2024-11-26 15:47:03] \nMissing Values Analysis:",
+                "[2024-11-26 15:47:03] \nTraining set missing values:",
+                "[2024-11-26 15:47:03] age                  0\nworkclass         1836\nfnlwgt               0\neducation            0\neducation-num        0\nmarital-status       0\noccupation        1843\nrelationship         0\nrace                 0\nsex                  0\ncapital-gain         0\ncapital-loss         0\nhours-per-week       0\nnative-country     583\nincome               0",
+                "[2024-11-26 15:47:03] \nTest set missing values:",
+                "[2024-11-26 15:47:03] age                 0\nworkclass         963\nfnlwgt              0\neducation           0\neducation-num       0\nmarital-status      0\noccupation        966\nrelationship        0\nrace                0\nsex                 0\ncapital-gain        0\ncapital-loss        0\nhours-per-week      0\nnative-country    274\nincome              0",
+                "[2024-11-26 15:47:06] Training set shape: (32561, 15)",
+                "[2024-11-26 15:47:06] Test set shape: (16281, 15)"
+            ]
+        },
+        "feature_engineering": {
+            "new_features": {
+                "financial_features": [
+                    "capital_total",
+                    "has_capital",
+                    "capital_per_hour"
+                ],
+                "work_features": [
+                    "work_intensity"
+                ],
+                "education_features": [
+                    "education_level"
+                ]
+            },
+            "logs": [
+                "[2024-11-26 15:47:07] \nFeature Engineering:",
+                "[2024-11-26 15:47:07] - Created financial features: capital_total, has_capital, capital_per_hour",
+                "[2024-11-26 15:47:07] - Created work-related features: work_intensity",
+                "[2024-11-26 15:47:07] - Created education level mapping"
+            ]
+        },
+        "model_training": {
+            "logs": [
+                "[2024-11-26 15:47:10] \nModel Training and Evaluation:",
+                "[2024-11-26 15:47:10] \nTraining random_forest:",
+                "[2024-11-26 15:47:32] Error creating performance plots for random_forest: 'float' object is not iterable",
+                "[2024-11-26 15:47:32] Cross-validation scores: [0.8529411764705882, 0.8827671913835957, 0.9177713338856669, 0.9149751449875725, 0.9166321458160729]",
+                "[2024-11-26 15:47:32] Mean CV score: 0.8970 (+/- 0.0513)",
+                "[2024-11-26 15:47:32] Test set accuracy: 0.8364",
+                "[2024-11-26 15:47:32] \nClassification Report:",
+                "[2024-11-26 15:47:32]               precision    recall  f1-score       support\n0              0.919687  0.861037  0.889397  12435.000000\n1              0.627506  0.756890  0.686152   3846.000000\naccuracy       0.836435  0.836435  0.836435      0.836435\nmacro avg      0.773597  0.808964  0.787774  16281.000000\nweighted avg   0.850666  0.836435  0.841385  16281.000000",
+                "[2024-11-26 15:47:32] \nTraining xgboost:",
+                "[2024-11-26 15:47:34] Error creating performance plots for xgboost: 'float' object is not iterable",
+                "[2024-11-26 15:47:34] Cross-validation scores: [0.8373032311516155, 0.8743786246893124, 0.9012013256006628, 0.9078293289146645, 0.90016570008285]",
+                "[2024-11-26 15:47:34] Mean CV score: 0.8842 (+/- 0.0521)",
+                "[2024-11-26 15:47:34] Test set accuracy: 0.8436",
+                "[2024-11-26 15:47:34] \nClassification Report:",
+                "[2024-11-26 15:47:34]               precision    recall  f1-score      support\n0              0.935902  0.853639  0.892880  12435.00000\n1              0.631504  0.810972  0.710074   3846.00000\naccuracy       0.843560  0.843560  0.843560      0.84356\nmacro avg      0.783703  0.832306  0.801477  16281.00000\nweighted avg   0.863995  0.843560  0.849696  16281.00000",
+                "[2024-11-26 15:47:34] \nTraining lightgbm:",
+                "[2024-11-26 15:47:36] Error creating performance plots for lightgbm: 'float' object is not iterable",
+                "[2024-11-26 15:47:36] Cross-validation scores: [0.831089478044739, 0.8745857497928748, 0.9093827671913836, 0.9142502071251035, 0.9101077050538525]",
+                "[2024-11-26 15:47:36] Mean CV score: 0.8879 (+/- 0.0636)",
+                "[2024-11-26 15:47:36] Test set accuracy: 0.8461",
+                "[2024-11-26 15:47:36] \nClassification Report:",
+                "[2024-11-26 15:47:36]               precision    recall  f1-score       support\n0              0.931133  0.862244  0.895365  12435.000000\n1              0.640579  0.793812  0.709011   3846.000000\naccuracy       0.846078  0.846078  0.846078      0.846078\nmacro avg      0.785856  0.828028  0.802188  16281.000000\nweighted avg   0.862497  0.846078  0.851343  16281.000000",
+                "[2024-11-26 15:47:36] \nTraining neural network:",
+                "[2024-11-26 15:59:14] Neural network test accuracy: 0.8038",
+                "[2024-11-26 15:59:14] Neural network best parameters: {'batch_size': 64, 'epochs': 100, 'hidden_sizes': (128, 64, 32), 'lr': 0.0001}"
+            ],
+            "model_results": {
+                "random_forest": {
+                    "grid_search_results": {
+                        "params": [
+                            {
+                                "class_weight": "balanced",
+                                "max_depth": 10,
+                                "n_estimators": 100
+                            },
+                            {
+                                "class_weight": "balanced",
+                                "max_depth": 20,
+                                "n_estimators": 100
+                            }
+                        ],
+                        "mean_test_score": [
+                            0.863790281332088,
+                            0.894798365819871
+                        ],
+                        "std_test_score": [
+                            0.01360106283065253,
+                            0.031584805531928016
+                        ]
+                    },
+                    "best_parameters": {
+                        "class_weight": "balanced",
+                        "max_depth": 20,
+                        "n_estimators": 100
+                    },
+                    "cross_validation": {
+                        "scores": [
+                            0.8529411764705882,
+                            0.8827671913835957,
+                            0.9177713338856669,
+                            0.9149751449875725,
+                            0.9166321458160729
+                        ],
+                        "mean": 0.8970173985086992,
+                        "std": 0.02562704257780898
+                    },
+                    "test_performance": {
+                        "accuracy": 0.8364351084085744,
+                        "classification_report": {
+                            "0": {
+                                "precision": 0.9196873389451984,
+                                "recall": 0.8610373944511459,
+                                "f1-score": 0.8893965194999377,
+                                "support": 12435.0
+                            },
+                            "1": {
+                                "precision": 0.6275059280017246,
+                                "recall": 0.7568902756110244,
+                                "f1-score": 0.6861520329994107,
+                                "support": 3846.0
+                            },
+                            "accuracy": 0.8364351084085744,
+                            "macro avg": {
+                                "precision": 0.7735966334734614,
+                                "recall": 0.8089638350310852,
+                                "f1-score": 0.7877742762496742,
+                                "support": 16281.0
+                            },
+                            "weighted avg": {
+                                "precision": 0.8506664123136278,
+                                "recall": 0.8364351084085744,
+                                "f1-score": 0.8413848313308432,
+                                "support": 16281.0
+                            }
+                        }
+                    }
+                },
+                "xgboost": {
+                    "grid_search_results": {
+                        "params": [
+                            {
+                                "learning_rate": 0.1,
+                                "max_depth": 3,
+                                "n_estimators": 100
+                            },
+                            {
+                                "learning_rate": 0.1,
+                                "max_depth": 6,
+                                "n_estimators": 100
+                            }
+                        ],
+                        "mean_test_score": [
+                            0.8595412728041957,
+                            0.8727167683252763
+                        ],
+                        "std_test_score": [
+                            0.018620029364854154,
+                            0.03853135807864044
+                        ]
+                    },
+                    "best_parameters": {
+                        "learning_rate": 0.1,
+                        "max_depth": 6,
+                        "n_estimators": 100
+                    },
+                    "cross_validation": {
+                        "scores": [
+                            0.8373032311516155,
+                            0.8743786246893124,
+                            0.9012013256006628,
+                            0.9078293289146645,
+                            0.90016570008285
+                        ],
+                        "mean": 0.8841756420878211,
+                        "std": 0.026069358301060764
+                    },
+                    "test_performance": {
+                        "accuracy": 0.8435599778883361,
+                        "classification_report": {
+                            "0": {
+                                "precision": 0.9359019573267501,
+                                "recall": 0.8536389223964616,
+                                "f1-score": 0.8928796736341843,
+                                "support": 12435.0
+                            },
+                            "1": {
+                                "precision": 0.6315043531079165,
+                                "recall": 0.8109724388975559,
+                                "f1-score": 0.7100739897552647,
+                                "support": 3846.0
+                            },
+                            "accuracy": 0.8435599778883361,
+                            "macro avg": {
+                                "precision": 0.7837031552173332,
+                                "recall": 0.8323056806470087,
+                                "f1-score": 0.8014768316947245,
+                                "support": 16281.0
+                            },
+                            "weighted avg": {
+                                "precision": 0.8639952448505119,
+                                "recall": 0.8435599778883361,
+                                "f1-score": 0.8496961676948486,
+                                "support": 16281.0
+                            }
+                        }
+                    }
+                },
+                "lightgbm": {
+                    "grid_search_results": {
+                        "params": [
+                            {
+                                "colsample_bytree": 0.8,
+                                "learning_rate": 0.1,
+                                "max_depth": 3,
+                                "min_child_samples": 50,
+                                "min_child_weight": 0.01,
+                                "min_split_gain": 0.1,
+                                "n_estimators": 100,
+                                "reg_alpha": 0.1,
+                                "reg_lambda": 0.1,
+                                "subsample": 0.8
+                            },
+                            {
+                                "colsample_bytree": 0.8,
+                                "learning_rate": 0.1,
+                                "max_depth": 6,
+                                "min_child_samples": 50,
+                                "min_child_weight": 0.01,
+                                "min_split_gain": 0.1,
+                                "n_estimators": 100,
+                                "reg_alpha": 0.1,
+                                "reg_lambda": 0.1,
+                                "subsample": 0.8
+                            }
+                        ],
+                        "mean_test_score": [
+                            0.862212319735841,
+                            0.8736055512866288
+                        ],
+                        "std_test_score": [
+                            0.02138146182055022,
+                            0.04893465714112458
+                        ]
+                    },
+                    "best_parameters": {
+                        "colsample_bytree": 0.8,
+                        "learning_rate": 0.1,
+                        "max_depth": 6,
+                        "min_child_samples": 50,
+                        "min_child_weight": 0.01,
+                        "min_split_gain": 0.1,
+                        "n_estimators": 100,
+                        "reg_alpha": 0.1,
+                        "reg_lambda": 0.1,
+                        "subsample": 0.8
+                    },
+                    "cross_validation": {
+                        "scores": [
+                            0.831089478044739,
+                            0.8745857497928748,
+                            0.9093827671913836,
+                            0.9142502071251035,
+                            0.9101077050538525
+                        ],
+                        "mean": 0.8878831814415907,
+                        "std": 0.03179222582513386
+                    },
+                    "test_performance": {
+                        "accuracy": 0.8460782507217002,
+                        "classification_report": {
+                            "0": {
+                                "precision": 0.9311333043855841,
+                                "recall": 0.8622436670687575,
+                                "f1-score": 0.8953653444676409,
+                                "support": 12435.0
+                            },
+                            "1": {
+                                "precision": 0.6405791019723038,
+                                "recall": 0.7938117524700988,
+                                "f1-score": 0.7090106827682304,
+                                "support": 3846.0
+                            },
+                            "accuracy": 0.8460782507217002,
+                            "macro avg": {
+                                "precision": 0.785856203178944,
+                                "recall": 0.8280277097694282,
+                                "f1-score": 0.8021880136179357,
+                                "support": 16281.0
+                            },
+                            "weighted avg": {
+                                "precision": 0.8624967671654209,
+                                "recall": 0.8460782507217002,
+                                "f1-score": 0.8513434767140673,
+                                "support": 16281.0
+                            }
+                        }
+                    }
+                },
+                "neural_network": {
+                    "grid_search_results": {
+                        "params": [
+                            {
+                                "batch_size": 64,
+                                "epochs": 100,
+                                "hidden_sizes": [
+                                    50,
+                                    25
+                                ],
+                                "lr": 0.0001
+                            },
+                            {
+                                "batch_size": 64,
+                                "epochs": 100,
+                                "hidden_sizes": [
+                                    128,
+                                    64,
+                                    32
+                                ],
+                                "lr": 0.0001
+                            }
+                        ],
+                        "mean_test_score": [
+                            0.7259728622707962,
+                            0.7325178383723189
+                        ],
+                        "std_test_score": [
+                            0.0642348595543226,
+                            0.06334123191152977
+                        ]
+                    },
+                    "best_parameters": {
+                        "batch_size": 64,
+                        "epochs": 100,
+                        "hidden_sizes": [
+                            128,
+                            64,
+                            32
+                        ],
+                        "lr": 0.0001
+                    },
+                    "cross_validation": {
+                        "mean": 0.7325178383723189,
+                        "std": 0.06334123191152977
+                    },
+                    "test_performance": {
+                        "accuracy": 0.8038204041520791,
+                        "classification_report": {
+                            "0": {
+                                "precision": 0.9486357898825128,
+                                "recall": 0.7856855649376759,
+                                "f1-score": 0.8595055863464415,
+                                "support": 12435.0
+                            },
+                            "1": {
+                                "precision": 0.5544968238047476,
+                                "recall": 0.8624544981799271,
+                                "f1-score": 0.675010175010175,
+                                "support": 3846.0
+                            },
+                            "accuracy": 0.8038204041520791,
+                            "macro avg": {
+                                "precision": 0.7515663068436302,
+                                "recall": 0.8240700315588015,
+                                "f1-score": 0.7672578806783082,
+                                "support": 16281.0
+                            },
+                            "weighted avg": {
+                                "precision": 0.8555298096887235,
+                                "recall": 0.8038204041520791,
+                                "f1-score": 0.8159229223823556,
+                                "support": 16281.0
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "model_evaluation": {},
+        "statistical_tests": {
+            "descriptive": {
+                "numerical": {
+                    "train": {
+                        "age": {
+                            "count": 32561.0,
+                            "mean": 38.58164675532078,
+                            "std": 13.640432553581146,
+                            "min": 17.0,
+                            "25%": 28.0,
+                            "50%": 37.0,
+                            "75%": 48.0,
+                            "max": 90.0
+                        },
+                        "fnlwgt": {
+                            "count": 32561.0,
+                            "mean": 189778.36651208502,
+                            "std": 105549.97769702233,
+                            "min": 12285.0,
+                            "25%": 117827.0,
+                            "50%": 178356.0,
+                            "75%": 237051.0,
+                            "max": 1484705.0
+                        },
+                        "education-num": {
+                            "count": 32561.0,
+                            "mean": 10.0806793403151,
+                            "std": 2.5727203320673406,
+                            "min": 1.0,
+                            "25%": 9.0,
+                            "50%": 10.0,
+                            "75%": 12.0,
+                            "max": 16.0
+                        },
+                        "capital-gain": {
+                            "count": 32561.0,
+                            "mean": 1077.6488437087312,
+                            "std": 7385.292084839299,
+                            "min": 0.0,
+                            "25%": 0.0,
+                            "50%": 0.0,
+                            "75%": 0.0,
+                            "max": 99999.0
+                        },
+                        "capital-loss": {
+                            "count": 32561.0,
+                            "mean": 87.303829734959,
+                            "std": 402.960218649059,
+                            "min": 0.0,
+                            "25%": 0.0,
+                            "50%": 0.0,
+                            "75%": 0.0,
+                            "max": 4356.0
+                        },
+                        "hours-per-week": {
+                            "count": 32561.0,
+                            "mean": 40.437455852092995,
+                            "std": 12.34742868173081,
+                            "min": 1.0,
+                            "25%": 40.0,
+                            "50%": 40.0,
+                            "75%": 45.0,
+                            "max": 99.0
+                        }
+                    },
+                    "test": {
+                        "age": {
+                            "count": 16281.0,
+                            "mean": 38.76745900128985,
+                            "std": 13.849186814264364,
+                            "min": 17.0,
+                            "25%": 28.0,
+                            "50%": 37.0,
+                            "75%": 48.0,
+                            "max": 90.0
+                        },
+                        "fnlwgt": {
+                            "count": 16281.0,
+                            "mean": 189435.6777839199,
+                            "std": 105714.90767083246,
+                            "min": 13492.0,
+                            "25%": 116736.0,
+                            "50%": 177831.0,
+                            "75%": 238384.0,
+                            "max": 1490400.0
+                        },
+                        "education-num": {
+                            "count": 16281.0,
+                            "mean": 10.07290706959032,
+                            "std": 2.5675452586676393,
+                            "min": 1.0,
+                            "25%": 9.0,
+                            "50%": 10.0,
+                            "75%": 12.0,
+                            "max": 16.0
+                        },
+                        "capital-gain": {
+                            "count": 16281.0,
+                            "mean": 1081.9051041090843,
+                            "std": 7583.935967887077,
+                            "min": 0.0,
+                            "25%": 0.0,
+                            "50%": 0.0,
+                            "75%": 0.0,
+                            "max": 99999.0
+                        },
+                        "capital-loss": {
+                            "count": 16281.0,
+                            "mean": 87.89926908666544,
+                            "std": 403.10528562936776,
+                            "min": 0.0,
+                            "25%": 0.0,
+                            "50%": 0.0,
+                            "75%": 0.0,
+                            "max": 3770.0
+                        },
+                        "hours-per-week": {
+                            "count": 16281.0,
+                            "mean": 40.392236349118605,
+                            "std": 12.479332247111829,
+                            "min": 1.0,
+                            "25%": 40.0,
+                            "50%": 40.0,
+                            "75%": 45.0,
+                            "max": 99.0
+                        }
+                    }
+                },
+                "categorical": {
+                    "train": {
+                        "workclass": {
+                            "Private": 22696,
+                            "Self-emp-not-inc": 2541,
+                            "Local-gov": 2093,
+                            "?": 1836,
+                            "State-gov": 1298,
+                            "Self-emp-inc": 1116,
+                            "Federal-gov": 960,
+                            "Without-pay": 14,
+                            "Never-worked": 7
+                        },
+                        "education": {
+                            "HS-grad": 10501,
+                            "Some-college": 7291,
+                            "Bachelors": 5355,
+                            "Masters": 1723,
+                            "Assoc-voc": 1382,
+                            "11th": 1175,
+                            "Assoc-acdm": 1067,
+                            "10th": 933,
+                            "7th-8th": 646,
+                            "Prof-school": 576,
+                            "9th": 514,
+                            "12th": 433,
+                            "Doctorate": 413,
+                            "5th-6th": 333,
+                            "1st-4th": 168,
+                            "Preschool": 51
+                        },
+                        "marital-status": {
+                            "Married-civ-spouse": 14976,
+                            "Never-married": 10683,
+                            "Divorced": 4443,
+                            "Separated": 1025,
+                            "Widowed": 993,
+                            "Married-spouse-absent": 418,
+                            "Married-AF-spouse": 23
+                        },
+                        "occupation": {
+                            "Prof-specialty": 4140,
+                            "Craft-repair": 4099,
+                            "Exec-managerial": 4066,
+                            "Adm-clerical": 3770,
+                            "Sales": 3650,
+                            "Other-service": 3295,
+                            "Machine-op-inspct": 2002,
+                            "?": 1843,
+                            "Transport-moving": 1597,
+                            "Handlers-cleaners": 1370,
+                            "Farming-fishing": 994,
+                            "Tech-support": 928,
+                            "Protective-serv": 649,
+                            "Priv-house-serv": 149,
+                            "Armed-Forces": 9
+                        },
+                        "relationship": {
+                            "Husband": 13193,
+                            "Not-in-family": 8305,
+                            "Own-child": 5068,
+                            "Unmarried": 3446,
+                            "Wife": 1568,
+                            "Other-relative": 981
+                        },
+                        "race": {
+                            "White": 27816,
+                            "Black": 3124,
+                            "Asian-Pac-Islander": 1039,
+                            "Amer-Indian-Eskimo": 311,
+                            "Other": 271
+                        },
+                        "sex": {
+                            "Male": 21790,
+                            "Female": 10771
+                        },
+                        "native-country": {
+                            "United-States": 29170,
+                            "Mexico": 643,
+                            "?": 583,
+                            "Philippines": 198,
+                            "Germany": 137,
+                            "Canada": 121,
+                            "Puerto-Rico": 114,
+                            "El-Salvador": 106,
+                            "India": 100,
+                            "Cuba": 95,
+                            "England": 90,
+                            "Jamaica": 81,
+                            "South": 80,
+                            "China": 75,
+                            "Italy": 73,
+                            "Dominican-Republic": 70,
+                            "Vietnam": 67,
+                            "Guatemala": 64,
+                            "Japan": 62,
+                            "Poland": 60,
+                            "Columbia": 59,
+                            "Taiwan": 51,
+                            "Haiti": 44,
+                            "Iran": 43,
+                            "Portugal": 37,
+                            "Nicaragua": 34,
+                            "Peru": 31,
+                            "France": 29,
+                            "Greece": 29,
+                            "Ecuador": 28,
+                            "Ireland": 24,
+                            "Hong": 20,
+                            "Cambodia": 19,
+                            "Trinadad&Tobago": 19,
+                            "Laos": 18,
+                            "Thailand": 18,
+                            "Yugoslavia": 16,
+                            "Outlying-US(Guam-USVI-etc)": 14,
+                            "Honduras": 13,
+                            "Hungary": 13,
+                            "Scotland": 12,
+                            "Holand-Netherlands": 1
+                        },
+                        "income": {
+                            "<=50K": 24720,
+                            ">50K": 7841
+                        }
+                    },
+                    "test": {
+                        "workclass": {
+                            "Private": 11210,
+                            "Self-emp-not-inc": 1321,
+                            "Local-gov": 1043,
+                            "?": 963,
+                            "State-gov": 683,
+                            "Self-emp-inc": 579,
+                            "Federal-gov": 472,
+                            "Without-pay": 7,
+                            "Never-worked": 3
+                        },
+                        "education": {
+                            "HS-grad": 5283,
+                            "Some-college": 3587,
+                            "Bachelors": 2670,
+                            "Masters": 934,
+                            "Assoc-voc": 679,
+                            "11th": 637,
+                            "Assoc-acdm": 534,
+                            "10th": 456,
+                            "7th-8th": 309,
+                            "Prof-school": 258,
+                            "9th": 242,
+                            "12th": 224,
+                            "Doctorate": 181,
+                            "5th-6th": 176,
+                            "1st-4th": 79,
+                            "Preschool": 32
+                        },
+                        "marital-status": {
+                            "Married-civ-spouse": 7403,
+                            "Never-married": 5434,
+                            "Divorced": 2190,
+                            "Widowed": 525,
+                            "Separated": 505,
+                            "Married-spouse-absent": 210,
+                            "Married-AF-spouse": 14
+                        },
+                        "occupation": {
+                            "Prof-specialty": 2032,
+                            "Exec-managerial": 2020,
+                            "Craft-repair": 2013,
+                            "Sales": 1854,
+                            "Adm-clerical": 1841,
+                            "Other-service": 1628,
+                            "Machine-op-inspct": 1020,
+                            "?": 966,
+                            "Transport-moving": 758,
+                            "Handlers-cleaners": 702,
+                            "Tech-support": 518,
+                            "Farming-fishing": 496,
+                            "Protective-serv": 334,
+                            "Priv-house-serv": 93,
+                            "Armed-Forces": 6
+                        },
+                        "relationship": {
+                            "Husband": 6523,
+                            "Not-in-family": 4278,
+                            "Own-child": 2513,
+                            "Unmarried": 1679,
+                            "Wife": 763,
+                            "Other-relative": 525
+                        },
+                        "race": {
+                            "White": 13946,
+                            "Black": 1561,
+                            "Asian-Pac-Islander": 480,
+                            "Amer-Indian-Eskimo": 159,
+                            "Other": 135
+                        },
+                        "sex": {
+                            "Male": 10860,
+                            "Female": 5421
+                        },
+                        "native-country": {
+                            "United-States": 14662,
+                            "Mexico": 308,
+                            "?": 274,
+                            "Philippines": 97,
+                            "Puerto-Rico": 70,
+                            "Germany": 69,
+                            "Canada": 61,
+                            "India": 51,
+                            "El-Salvador": 49,
+                            "China": 47,
+                            "Cuba": 43,
+                            "England": 37,
+                            "South": 35,
+                            "Dominican-Republic": 33,
+                            "Italy": 32,
+                            "Haiti": 31,
+                            "Portugal": 30,
+                            "Japan": 30,
+                            "Poland": 27,
+                            "Columbia": 26,
+                            "Jamaica": 25,
+                            "Guatemala": 24,
+                            "Greece": 20,
+                            "Vietnam": 19,
+                            "Ecuador": 17,
+                            "Iran": 16,
+                            "Peru": 15,
+                            "Nicaragua": 15,
+                            "Taiwan": 14,
+                            "Ireland": 13,
+                            "Thailand": 12,
+                            "Hong": 10,
+                            "Outlying-US(Guam-USVI-etc)": 9,
+                            "France": 9,
+                            "Scotland": 9,
+                            "Cambodia": 9,
+                            "Trinadad&Tobago": 8,
+                            "Yugoslavia": 7,
+                            "Honduras": 7,
+                            "Hungary": 6,
+                            "Laos": 5
+                        },
+                        "income": {
+                            "<=50K": 12435,
+                            ">50K": 3846
+                        }
+                    }
+                }
+            },
+            "normality_tests": {
+                "age": {
+                    "statistic": 1526.0108462557214,
+                    "p_value": 0.0
+                },
+                "fnlwgt": {
+                    "statistic": 10662.513694511363,
+                    "p_value": 0.0
+                },
+                "education-num": {
+                    "statistic": 817.1641448645273,
+                    "p_value": 3.5897196971962224e-178
+                },
+                "capital-gain": {
+                    "statistic": 55096.550375023995,
+                    "p_value": 0.0
+                },
+                "capital-loss": {
+                    "statistic": 29331.399855829015,
+                    "p_value": 0.0
+                },
+                "hours-per-week": {
+                    "statistic": 2508.9184404706616,
+                    "p_value": 0.0
+                }
+            },
+            "independence_tests": {
+                "workclass": {
+                    "chi2": 1045.7085997281692,
+                    "p_value": 2.026505431120716e-220
+                },
+                "education": {
+                    "chi2": 4429.653302288619,
+                    "p_value": 0.0
+                },
+                "marital-status": {
+                    "chi2": 6517.741653663022,
+                    "p_value": 0.0
+                },
+                "occupation": {
+                    "chi2": 4031.974280247181,
+                    "p_value": 0.0
+                },
+                "relationship": {
+                    "chi2": 6699.07689685885,
+                    "p_value": 0.0
+                },
+                "race": {
+                    "chi2": 330.9204310085741,
+                    "p_value": 2.305960610160958e-70
+                },
+                "sex": {
+                    "chi2": 1517.813409134445,
+                    "p_value": 0.0
+                },
+                "native-country": {
+                    "chi2": 317.2303857833171,
+                    "p_value": 2.2113858852543023e-44
+                }
+            },
+            "correlation": {
+                "age": {
+                    "age": 1.0,
+                    "fnlwgt": -0.07664586787504064,
+                    "education-num": 0.036527189464106324,
+                    "capital-gain": 0.0776744981659941,
+                    "capital-loss": 0.057774539478974145,
+                    "hours-per-week": 0.06875570750955742
+                },
+                "fnlwgt": {
+                    "age": -0.07664586787504064,
+                    "fnlwgt": 1.0,
+                    "education-num": -0.04319463273302273,
+                    "capital-gain": 0.00043188579188680327,
+                    "capital-loss": -0.010251711675330953,
+                    "hours-per-week": -0.01876849061074513
+                },
+                "education-num": {
+                    "age": 0.036527189464106324,
+                    "fnlwgt": -0.04319463273302273,
+                    "education-num": 1.0,
+                    "capital-gain": 0.12263011469222229,
+                    "capital-loss": 0.07992295668664588,
+                    "hours-per-week": 0.1481227326229115
+                },
+                "capital-gain": {
+                    "age": 0.0776744981659941,
+                    "fnlwgt": 0.00043188579188680327,
+                    "education-num": 0.12263011469222229,
+                    "capital-gain": 1.0,
+                    "capital-loss": -0.03161506295222775,
+                    "hours-per-week": 0.07840861539013491
+                },
+                "capital-loss": {
+                    "age": 0.057774539478974145,
+                    "fnlwgt": -0.010251711675330953,
+                    "education-num": 0.07992295668664588,
+                    "capital-gain": -0.03161506295222775,
+                    "capital-loss": 1.0,
+                    "hours-per-week": 0.05425636227265108
+                },
+                "hours-per-week": {
+                    "age": 0.06875570750955742,
+                    "fnlwgt": -0.01876849061074513,
+                    "education-num": 0.1481227326229115,
+                    "capital-gain": 0.07840861539013491,
+                    "capital-loss": 0.05425636227265108,
+                    "hours-per-week": 1.0
+                }
+            },
+            "logs": [
+                "[2024-11-26 15:47:06] \nNormality Test Results:",
+                "[2024-11-26 15:47:06] age: p-value = 0.0000",
+                "[2024-11-26 15:47:06] fnlwgt: p-value = 0.0000",
+                "[2024-11-26 15:47:06] education-num: p-value = 0.0000",
+                "[2024-11-26 15:47:06] capital-gain: p-value = 0.0000",
+                "[2024-11-26 15:47:06] capital-loss: p-value = 0.0000",
+                "[2024-11-26 15:47:06] hours-per-week: p-value = 0.0000",
+                "[2024-11-26 15:47:06] \nFeature Independence Test Results:",
+                "[2024-11-26 15:47:06] workclass: chi2 = 1045.7086, p-value = 0.0000",
+                "[2024-11-26 15:47:06] education: chi2 = 4429.6533, p-value = 0.0000",
+                "[2024-11-26 15:47:06] marital-status: chi2 = 6517.7417, p-value = 0.0000",
+                "[2024-11-26 15:47:06] occupation: chi2 = 4031.9743, p-value = 0.0000",
+                "[2024-11-26 15:47:06] relationship: chi2 = 6699.0769, p-value = 0.0000",
+                "[2024-11-26 15:47:06] race: chi2 = 330.9204, p-value = 0.0000",
+                "[2024-11-26 15:47:06] sex: chi2 = 1517.8134, p-value = 0.0000",
+                "[2024-11-26 15:47:06] native-country: chi2 = 317.2304, p-value = 0.0000",
+                "[2024-11-26 15:47:06] \nStrong Correlations (|r| > 0.5):"
+            ]
+        },
+        "parameter_analysis": {},
+        "data_preparation": {
+            "feature_columns": [
+                "age",
+                "workclass",
+                "education-num",
+                "education_level",
+                "marital-status",
+                "occupation",
+                "relationship",
+                "race",
+                "sex",
+                "capital_total",
+                "has_capital",
+                "work_intensity",
+                "capital_per_hour",
+                "hours-per-week"
+            ],
+            "training_shape": [
+                48280,
+                14
+            ],
+            "test_shape": [
+                16281,
+                14
+            ],
+            "class_distribution": {
+                "original": [
+                    24720,
+                    7841
+                ],
+                "balanced": [
+                    24140,
+                    24140
+                ]
+            },
+            "logs": [
+                "[2024-11-26 15:47:10] \nData Preparation:",
+                "[2024-11-26 15:47:10] Number of features: 14",
+                "[2024-11-26 15:47:10] Training set balanced shape: (48280, 14)",
+                "[2024-11-26 15:47:10] Test set shape: (16281, 14)"
+            ]
+        }
+    },
+    "configuration": {
+        "hyperparameters": {
+            "random_forest": {
+                "params": {
+                    "n_estimators": [
+                        100
+                    ],
+                    "max_depth": [
+                        10,
+                        20
+                    ],
+                    "class_weight": [
+                        "balanced"
+                    ]
+                },
+                "param_explanations": {
+                    "n_estimators": "Controls the number of trees in the forest. More trees provide better accuracy but increase computation time.",
+                    "max_depth": "Maximum depth of each tree. None allows unlimited growth, while specific values prevent overfitting.",
+                    "min_samples_split": "Minimum samples required to split a node. Higher values prevent overfitting but might underfit.",
+                    "min_samples_leaf": "Minimum samples required in a leaf node. Higher values create more conservative trees.",
+                    "max_features": "Method for selecting features for splits. sqrt and log2 are common choices for classification.",
+                    "bootstrap": "Whether to use bootstrap samples. False means use whole dataset for each tree.",
+                    "class_weight": "Handling class imbalance. balanced adjusts weights inversely proportional to frequencies."
+                }
+            },
+            "xgboost": {
+                "params": {
+                    "learning_rate": [
+                        0.1
+                    ],
+                    "max_depth": [
+                        3,
+                        6
+                    ],
+                    "n_estimators": [
+                        100
+                    ]
+                },
+                "param_explanations": {
+                    "learning_rate": "Controls the contribution of each tree. Lower values mean more conservative boosting.",
+                    "max_depth": "Maximum depth of trees. Deeper trees can model more complex patterns but may overfit.",
+                    "n_estimators": "Number of boosting rounds. More rounds might improve performance but may overfit.",
+                    "subsample": "Fraction of samples used for training each tree. Helps prevent overfitting.",
+                    "colsample_bytree": "Fraction of features used for training each tree. Controls feature selection.",
+                    "min_child_weight": "Minimum sum of instance weight in child. Controls tree splitting behavior.",
+                    "gamma": "Minimum loss reduction required for split. Higher values make algorithm more conservative.",
+                    "reg_alpha": "L1 regularization term. Helps create sparse trees.",
+                    "reg_lambda": "L2 regularization term. Helps stabilize the model."
+                }
+            },
+            "lightgbm": {
+                "params": {
+                    "learning_rate": [
+                        0.1
+                    ],
+                    "max_depth": [
+                        3,
+                        6
+                    ],
+                    "n_estimators": [
+                        100
+                    ],
+                    "min_child_samples": [
+                        50
+                    ],
+                    "min_child_weight": [
+                        0.01
+                    ],
+                    "subsample": [
+                        0.8
+                    ],
+                    "colsample_bytree": [
+                        0.8
+                    ],
+                    "reg_alpha": [
+                        0.1
+                    ],
+                    "reg_lambda": [
+                        0.1
+                    ],
+                    "min_split_gain": [
+                        0.1
+                    ]
+                },
+                "param_explanations": {
+                    "learning_rate": "Step size shrinkage to prevent overfitting. Lower values need more iterations.",
+                    "num_leaves": "Maximum number of leaves in one tree. Controls model complexity.",
+                    "max_depth": "Maximum depth of the tree. -1 means no limit.",
+                    "n_estimators": "Number of boosting iterations. More iterations might improve performance.",
+                    "min_child_samples": "Minimum number of data needed in a leaf. Controls overfitting.",
+                    "min_child_weight": "Minimum sum of instance weight in leaf. Similar to min_child_samples.",
+                    "min_split_gain": "Minimum gain to make a split. Controls tree growth.",
+                    "subsample": "Training instance sampling ratio. Helps prevent overfitting.",
+                    "colsample_bytree": "Feature sampling ratio for each tree. Controls feature selection.",
+                    "reg_alpha": "L1 regularization. Helps create sparse trees.",
+                    "reg_lambda": "L2 regularization. Helps create more conservative trees.",
+                    "boosting_type": "Algorithm type. DART often provides better accuracy but might be unstable."
+                }
+            },
+            "neural_network": {
+                "params": {
+                    "hidden_sizes": [
+                        [
+                            50,
+                            25
+                        ],
+                        [
+                            128,
+                            64,
+                            32
+                        ]
+                    ],
+                    "batch_size": [
+                        64
+                    ],
+                    "epochs": [
+                        100
+                    ],
+                    "lr": [
+                        0.0001
+                    ]
+                },
+                "param_explanations": {
+                    "hidden_layer_sizes": "Architecture of hidden layers. More complex architectures can model more complex patterns.",
+                    "activation": "Activation function for hidden layers. ReLU is often default, tanh can work better for some cases.",
+                    "alpha": "L2 regularization term. Higher values mean stronger regularization.",
+                    "learning_rate": "Learning rate schedule for weight updates. Adaptive can be better for complex problems.",
+                    "max_iter": "Maximum number of iterations. Should be increased if model doesnt converge.",
+                    "early_stopping": "Whether to use early stopping to prevent overfitting.",
+                    "validation_fraction": "Fraction of training data to use for validation.",
+                    "batch_size": "Size of minibatches for training. Auto lets algorithm decide best size."
+                }
+            }
+        }
+    }
+}

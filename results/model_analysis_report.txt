@@ -1,0 +1,12 @@
+MACHINE LEARNING MODEL ANALYSIS REPORT
+Generated on: 2024-11-26 15:59:14
+================================================================================
+
+
+MODEL COMPARISON SUMMARY
+================================================================================
+                Test Accuracy  CV Mean Score    CV Std
+random_forest        0.836435       0.897017  0.025627
+xgboost              0.843560       0.884176  0.026069
+lightgbm             0.846078       0.887883  0.031792
+neural_network       0.803820       0.732518  0.063341

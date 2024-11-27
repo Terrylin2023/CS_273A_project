@@ -1,0 +1,31 @@
+# Ignore Python cache and virtual environment directories
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env/
+
+# Ignore datasets and raw data files
+*.data
+*.test
+*.names
+
+# Ignore model files (e.g., pickle files)
+models/
+*.pkl
+
+
+# Ignore stats and analysis-related files
+stats/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
